@@ -17,11 +17,11 @@ function calAll(){
         " || P-modchips cost: $" + rPMod.toFixed(2) +
         " || Hg Time cost: $" + rHg.toFixed(2) +
         " || Total Cost: $" + sum.toFixed(2);
-    document.getElementById("outputResult2").innerText = 
+    /*document.getElementById("outputResult2").innerText = 
         "Test" + 
         " || E1" +
         " || E2"+
-        " || E3";
+        " || E3"; */
 }
 
 function calToken(bttP, tcP, atP, abP) {
