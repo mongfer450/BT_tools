@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bigtime Tools</title>
+    <link rel="stylesheet" href="/bt_tools/styles.css">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="/bt_tools/index.html">Home</a></li>
+            <li><a href="pCal.html">Prestige Calculator</a></li>
+            <li><a href="spaceS.html">Space Setup</a></li>        </ul>
+    </div>
+
+    <h1>Prestige Calculator</h1>
+    <div class="container">
+        <div class="tokenCal">
+            <label for="tokenSelect">Tokens:</label>
+            <select id="tokenSelect">
+                <option value="btt">Bigtime Token</option>
+                <option value="tc">Time Crystal</option>
+                <option value="at">A-Terracore</option>
+                <option value="ab">A-Blushfire</option>
+            </select>
+            <label for="inputToken">Used:</label>
+            <input type="text" id="inputToken" />
+            
+        </div>
+        <div class="PModCal">
+            <label for="inputPMod">P-Modchip used:</label>
+            <input type="text" id="inputPMOD" />
+        </div>
+        <div class="hgtCal">
+            <label for="inputHgT">HG Time used:</label>
+            <input type="text" id="inputHgT" />
+        </div>
+
+        <button onclick="calAll()">Calculate</button>
+    </div>
+
+    <div class="outputBox">
+        <p id="outputResult"></p>
+        <p id="outputResult2"></p>
+    </div>
+    
+</body>
+<script src="/bt_tools/BTtools.js"></script>
+</html>

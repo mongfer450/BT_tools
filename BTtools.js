@@ -1,13 +1,15 @@
-
-// printOutput costเป็น$, qtyที่คิด
+// track ราคา btt, atp, abp และ update ให้ realtime
+// แสดงจำนวน bigtime ที่ต้อง earn เพื่อ breakeven
+// 
 let rToken;
 let rPMod;
 let rHg;
 
 function calAll(){
 
-    calToken(0.1, 0.0074, 3.11, 2.87); //btt, tcP, atP, abP
-    calPMOD(0.2);
+    let bttP = 0.1;
+    calToken(bttP, 0.0074, 3.11, 2.87); //btt, tcP, atP, abP
+    calPMOD(0.2, bttP);
     calHgt(0.99);
 
     let sum = rToken + rPMod + rHg;
@@ -17,11 +19,6 @@ function calAll(){
         " || P-modchips cost: $" + rPMod.toFixed(2) +
         " || Hg Time cost: $" + rHg.toFixed(2) +
         " || Total Cost: $" + sum.toFixed(2);
-    document.getElementById("outputResult2").innerText = 
-        "Test" + 
-        " || E1" +
-        " || E2"+
-        " || E3";
 }
 
 function calToken(bttP, tcP, atP, abP) {
@@ -57,14 +54,14 @@ function calToken(bttP, tcP, atP, abP) {
     rToken = result;
 }
 
-function calPMOD(pricePMod) {
+function calPMOD(pricePMod, bttP) {
     let qtyPMod = document.getElementById("inputPMOD").value;
      if (isNaN(qtyPMod)) {
          qtyPMod = 0;
          return;
      }
 
-     rPMod = parseFloat(qtyPMod*pricePMod);
+     rPMod = parseFloat(qtyPMod*(pricePMod * bttP));
     
 }
 
@@ -77,4 +74,6 @@ function calHgt(aHrCost) {
 
     rHg = parseFloat(Hgt*((aHrCost/60)*5));
 }
+
+
 
